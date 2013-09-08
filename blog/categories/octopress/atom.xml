@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | CJump Blog]]></title>
+  <link href="http://ctiao.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://ctiao.github.io/"/>
+  <updated>2013-09-08T22:29:11+08:00</updated>
+  <id>http://ctiao.github.io/</id>
+  <author>
+    <name><![CDATA[C Jump]]></name>
+    <email><![CDATA[calmer91@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[在Cygwin下部署github octopress博客环境]]></title>
+    <link href="http://ctiao.github.io/blog/2013/09/08/zai-cygwinxia-bu-shu-github-octopressbo-ke-huan-jing/"/>
+    <updated>2013-09-08T19:00:00+08:00</updated>
+    <id>http://ctiao.github.io/blog/2013/09/08/zai-cygwinxia-bu-shu-github-octopressbo-ke-huan-jing</id>
+    <content type="html"><![CDATA[<p>本文以Cygwin下快速搭建octopress github博客为目的,没有任何研究学习价值，仅供参考。</p>
+
+<h2>首先是配置ruby环境</h2>
+
+<p>输入:
+<code>
+rvm list
+</code>
+如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运行下面命令进行ruby环境安装.不懂ruby,所以以下照搬组合网上的命令:
+<code>
+curl -L https://get.rvm.io | bash -s stable --ruby
+source ~/.profile
+rvm install 1.9.3
+rvm use 1.9.3
+rvm rubygems latest
+</code></p>
+
+<h2>下载octopress源码</h2>
+
+<p><code>
+git clone https://github.com/imathis/octopress.git
+cd octopress
+</code></p>
+
+<h2>配置安装octopress依赖</h2>
+
+<p><code>
+gem install bundler
+bundle install
+</code>
+如果遇到错误：
+<code>
+An error occurred while installing posix-spawn (0.3.6), and Bundler cannot continue。
+</code>
+按下面步骤进行posix-spawn编译安装
+<code>
+gem install rake-compiler -v 0.7.6
+git clone https://github.com/rtomayko/posix-spawn.git
+cd posix-spawn
+git checkout 2d67c5e6eea5fe50823ca864639b5ae1e25928e3 #恢复到版本0.3.6进行编译
+rake gem
+gem install pkg/posix-spawn-0.3.6
+cd ..
+bundle install
+</code>
+如果遇到错误:
+<code>
+You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.2.2. Using bundle exec may solve this.
+</code>
+按下面步骤删除rake 10.1.0
+```
+gem uninstall rake
+Select gem to uninstall:
+ 1. rake-0.9.2.2
+ 2. rake-10.1.0
+ 3. All versions</p>
+
+<blockquote><p>2
+```</p></blockquote>
+
+<h2>创建建username.github.io仓库</h2>
+
+<p>在github上创建一个名为username.github.io的源码repo,username为你的github用户名</p>
+
+<h2>编辑octopress配置文件_config.yml</h2>
+
+<p>twitter相关的都设成false</p>
+
+<h2>删除source/_includes/custom/custom/head.html里的google字体</h2>
+
+<p>墙内都懂的,引用google字体会造成页面加载缓慢</p>
+
+<h2>安装主题(Themes)</h2>
+
+<p>一般情况下直接安装默认主题即可,反正以后也是可以修改的
+<code>
+rake install #安装默认主题
+</code>
+也可以这里挑选第三方主题：
+<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes</a></p>
+
+<h2>setup_github_pages</h2>
+
+<p>输入以下命令进行github page关联,按要求输入即可
+<code>
+rake setup_github_pages
+</code></p>
+
+<h2>发布文章</h2>
+
+<p><code>
+rake new_post["title"]
+</code>
+创建好了一篇博文,按提示编辑source/_post/xxx.markdown这个文件输入博文内容,语法就是markdown,用过github应该都很熟悉了.</p>
+
+<h2>更新文章到github</h2>
+
+<p>输入:
+<code>
+rake generate
+rake deploy
+</code>
+创建并上传文章到github,期间可能会需要输入github ssh key密码等内容,按提示输入即可.
+还有个rake preview命令可以预览,不过在cygwin下好像没用.就忽略掉吧,反正传上去之后也可以看到效果.</p>
+]]></content>
+  </entry>
+  
+</feed>
