@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://ctiao.github.io/atom.xml" rel="self"/>
   <link href="http://ctiao.github.io/"/>
-  <updated>2013-09-08T20:11:42+08:00</updated>
+  <updated>2013-09-08T20:23:28+08:00</updated>
   <id>http://ctiao.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -18,9 +18,9 @@
     <link href="http://ctiao.github.io/blog/2013/09/08/zai-cygwinxia-bu-shu-github-octopressbo-ke-huan-jing/"/>
     <updated>2013-09-08T19:00:00+08:00</updated>
     <id>http://ctiao.github.io/blog/2013/09/08/zai-cygwinxia-bu-shu-github-octopressbo-ke-huan-jing</id>
-    <content type="html"><![CDATA[<h2>本文章以Cygwin下快速搭建octopress github博客为目的,没有任何研究学习价值，仅供参考。</h2>
+    <content type="html"><![CDATA[<p>本文以Cygwin下快速搭建octopress github博客为目的,没有任何研究学习价值，仅供参考。</p>
 
-<h1>首先是配置ruby环境</h1>
+<h2>首先是配置ruby环境</h2>
 
 <p>输入:</p>
 
@@ -42,7 +42,7 @@
 </span><span class='line'>rvm rubygems latest</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>下载octopress源码</h1>
+<h2>下载octopress源码</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -50,7 +50,7 @@
 </span><span class='line'>cd octopress</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>配置安装octopress依赖</h1>
+<h2>配置安装octopress依赖</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -106,19 +106,19 @@
 </span><span class='line'>&gt; 2</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>创建建username.github.io仓库</h1>
+<h2>创建建username.github.io仓库</h2>
 
 <p>在github上创建一个名为username.github.io的源码repo,username为你的github用户名</p>
 
-<h1>编辑octopress配置文件_config.yml</h1>
+<h2>编辑octopress配置文件_config.yml</h2>
 
 <p>twitter相关的都设成false</p>
 
-<h1>删除source/_includes/custom/custom/head.html里的google字体</h1>
+<h2>删除source/_includes/custom/custom/head.html里的google字体</h2>
 
 <p>墙内都懂的,引用google字体会造成页面加载缓慢</p>
 
-<h1>安装主题(Themes)</h1>
+<h2>安装主题(Themes)</h2>
 
 <p>一般情况下直接安装默认主题即可,反正以后也是可以修改的</p>
 
@@ -129,7 +129,7 @@
 <p>也可以这里挑选第三方主题：
 <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes</a></p>
 
-<h1>setup_github_pages</h1>
+<h2>setup_github_pages</h2>
 
 <p>输入以下命令进行github page关联,按要求输入即可</p>
 
@@ -137,7 +137,7 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>发布文章</h1>
+<h2>发布文章</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
@@ -145,7 +145,7 @@
 
 <p>创建好了一篇博文,按提示编辑source/_post/xxx.markdown这个文件输入博文内容,语法就是markdown,用过github应该都很熟悉了.</p>
 
-<h1>更新文章到github</h1>
+<h2>更新文章到github</h2>
 
 <p>输入:</p>
 

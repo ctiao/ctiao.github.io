@@ -9,7 +9,7 @@
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="本文章以Cygwin下快速搭建octopress github博客为目的,没有任何研究学习价值，仅供参考。 首先是配置ruby环境 输入: 1
+  <meta name="description" content="本文以Cygwin下快速搭建octopress github博客为目的,没有任何研究学习价值，仅供参考。 首先是配置ruby环境 输入: 1
 rvm list 如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运行下面命令进行ruby环境安装.不懂ruby,所以以下照搬组合网上的命令 &hellip;">
   
 
@@ -95,9 +95,9 @@ rvm list 如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运�
   </header>
 
 
-  <div class="entry-content"><h2>本文章以Cygwin下快速搭建octopress github博客为目的,没有任何研究学习价值，仅供参考。</h2>
+  <div class="entry-content"><p>本文以Cygwin下快速搭建octopress github博客为目的,没有任何研究学习价值，仅供参考。</p>
 
-<h1>首先是配置ruby环境</h1>
+<h2>首先是配置ruby环境</h2>
 
 <p>输入:</p>
 
@@ -119,7 +119,7 @@ rvm list 如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运�
 </span><span class='line'>rvm rubygems latest</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>下载octopress源码</h1>
+<h2>下载octopress源码</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -127,7 +127,7 @@ rvm list 如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运�
 </span><span class='line'>cd octopress</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>配置安装octopress依赖</h1>
+<h2>配置安装octopress依赖</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -183,19 +183,19 @@ rvm list 如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运�
 </span><span class='line'>&gt; 2</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>创建建username.github.io仓库</h1>
+<h2>创建建username.github.io仓库</h2>
 
 <p>在github上创建一个名为username.github.io的源码repo,username为你的github用户名</p>
 
-<h1>编辑octopress配置文件_config.yml</h1>
+<h2>编辑octopress配置文件_config.yml</h2>
 
 <p>twitter相关的都设成false</p>
 
-<h1>删除source/_includes/custom/custom/head.html里的google字体</h1>
+<h2>删除source/_includes/custom/custom/head.html里的google字体</h2>
 
 <p>墙内都懂的,引用google字体会造成页面加载缓慢</p>
 
-<h1>安装主题(Themes)</h1>
+<h2>安装主题(Themes)</h2>
 
 <p>一般情况下直接安装默认主题即可,反正以后也是可以修改的</p>
 
@@ -206,7 +206,7 @@ rvm list 如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运�
 <p>也可以这里挑选第三方主题：
 <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes</a></p>
 
-<h1>setup_github_pages</h1>
+<h2>setup_github_pages</h2>
 
 <p>输入以下命令进行github page关联,按要求输入即可</p>
 
@@ -214,7 +214,7 @@ rvm list 如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运�
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>发布文章</h1>
+<h2>发布文章</h2>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
@@ -222,7 +222,7 @@ rvm list 如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运�
 
 <p>创建好了一篇博文,按提示编辑source/_post/xxx.markdown这个文件输入博文内容,语法就是markdown,用过github应该都很熟悉了.</p>
 
-<h1>更新文章到github</h1>
+<h2>更新文章到github</h2>
 
 <p>输入:</p>
 
