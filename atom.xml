@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[CJump Blog]]></title>
   <link href="http://ctiao.github.io/atom.xml" rel="self"/>
   <link href="http://ctiao.github.io/"/>
-  <updated>2013-09-08T20:25:29+08:00</updated>
+  <updated>2013-09-08T20:29:11+08:00</updated>
   <id>http://ctiao.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
-    
+    <name><![CDATA[ctiao]]></name>
+    <email><![CDATA[calmer91@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
