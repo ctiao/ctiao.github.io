@@ -9,7 +9,8 @@
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="本文章以Cygwin下快速搭建octopress github博客为目的,没有任何研究学习价值，仅供参考。 首先是配置ruby环境 输入: rvm list 如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运行下面命令进行ruby环境安装.不懂ruby,所以以下照搬组合网上的命令: &hellip;">
+  <meta name="description" content="本文章以Cygwin下快速搭建octopress github博客为目的,没有任何研究学习价值，仅供参考。 首先是配置ruby环境 输入: 1
+rvm list 如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运行下面命令进行ruby环境安装.不懂ruby,所以以下照搬组合网上的命令 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,109 +92,142 @@
   </header>
 
 
-<div class="entry-content"><h3>本文章以Cygwin下快速搭建octopress github博客为目的,没有任何研究学习价值，仅供参考。</h3>
+<div class="entry-content"><h2>本文章以Cygwin下快速搭建octopress github博客为目的,没有任何研究学习价值，仅供参考。</h2>
 
-<h3>首先是配置ruby环境</h3>
+<h1>首先是配置ruby环境</h1>
 
-<h1>输入:</h1>
+<p>输入:</p>
 
-<h1>rvm list</h1>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rvm list</span></code></pre></td></tr></table></div></figure>
 
-<h1>如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运行下面命令进行ruby环境安装.不懂ruby,所以以下照搬组合网上的命令:</h1>
 
-<p>curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable &mdash;ruby
-source ~/.profile
-rvm install 1.9.3
-rvm use 1.9.3</p>
+<p>如果显示当前版本是&lt;1.9.3或者找不到rvm命令,则需运行下面命令进行ruby环境安装.不懂ruby,所以以下照搬组合网上的命令:</p>
 
-<h1>rvm rubygems latest</h1>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl -L https://get.rvm.io | bash -s stable --ruby
+</span><span class='line'>source ~/.profile
+</span><span class='line'>rvm install 1.9.3
+</span><span class='line'>rvm use 1.9.3
+</span><span class='line'>rvm rubygems latest</span></code></pre></td></tr></table></div></figure>
 
-<h3>下载octopress源码</h3>
 
-<p>===============
-git clone <a href="https://github.com/imathis/octopress.git">https://github.com/imathis/octopress.git</a></p>
+<h1>下载octopress源码</h1>
 
-<h1>cd octopress</h1>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/imathis/octopress.git
+</span><span class='line'>cd octopress</span></code></pre></td></tr></table></div></figure>
 
-<h3>配置安装octopress依赖</h3>
 
-<p>===============
-gem install bundler</p>
+<h1>配置安装octopress依赖</h1>
 
-<h1>bundle install</h1>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
 
-<h1>如果遇到错误：</h1>
 
-<h1>An error occurred while installing posix-spawn (0.3.6), and Bundler cannot continue。</h1>
+<p>如果遇到错误：</p>
 
-<h1>按下面步骤进行posix-spawn编译安装</h1>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>An error occurred while installing posix-spawn (0.3.6), and Bundler cannot continue。</span></code></pre></td></tr></table></div></figure>
 
-<p>gem install rake-compiler -v 0.7.6
-git clone <a href="https://github.com/rtomayko/posix-spawn.git">https://github.com/rtomayko/posix-spawn.git</a>
-cd posix-spawn
-git checkout 2d67c5e6eea5fe50823ca864639b5ae1e25928e3 #恢复到版本0.3.6进行编译
-rake gem
-gem install pkg/posix-spawn-0.3.6
-cd ..</p>
 
-<h1>bundle install</h1>
+<p>按下面步骤进行posix-spawn编译安装</p>
 
-<h1>如果遇到错误:</h1>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install rake-compiler -v 0.7.6
+</span><span class='line'>git clone https://github.com/rtomayko/posix-spawn.git
+</span><span class='line'>cd posix-spawn
+</span><span class='line'>git checkout 2d67c5e6eea5fe50823ca864639b5ae1e25928e3 #恢复到版本0.3.6进行编译
+</span><span class='line'>rake gem
+</span><span class='line'>gem install pkg/posix-spawn-0.3.6
+</span><span class='line'>cd ..
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
 
-<h1>You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.2.2. Using bundle exec may solve this.</h1>
 
-<h1>按下面步骤删除rake 10.1.0</h1>
+<p>如果遇到错误:</p>
 
-<p>gem uninstall rake
-Select gem to uninstall:
- 1. rake-0.9.2.2
- 2. rake-10.1.0
- 3. All versions</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>You have already activated rake 10.1.0, but your Gemfile requires rake 0.9.2.2. Using bundle exec may solve this.</span></code></pre></td></tr></table></div></figure>
 
-<blockquote><h1>2</h1></blockquote>
 
-<h3>创建建username.github.io仓库</h3>
+<p>按下面步骤删除rake 10.1.0</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem uninstall rake
+</span><span class='line'>Select gem to uninstall:
+</span><span class='line'> 1. rake-0.9.2.2
+</span><span class='line'> 2. rake-10.1.0
+</span><span class='line'> 3. All versions
+</span><span class='line'>&gt; 2</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>创建建username.github.io仓库</h1>
 
 <p>在github上创建一个名为username.github.io的源码repo,username为你的github用户名</p>
 
-<h3>编辑octopress配置文件_config.yml</h3>
+<h1>编辑octopress配置文件_config.yml</h1>
 
 <p>twitter相关的都设成false</p>
 
-<h3>删除source/_includes/custom/custom/head.html里的google字体</h3>
+<h1>删除source/_includes/custom/custom/head.html里的google字体</h1>
 
 <p>墙内都懂的,引用google字体会造成页面加载缓慢</p>
 
-<h3>安装主题(Themes)</h3>
+<h1>安装主题(Themes)</h1>
 
-<h1>一般情况下直接安装默认主题即可,反正以后也是可以修改的</h1>
+<p>一般情况下直接安装默认主题即可,反正以后也是可以修改的</p>
 
-<h1>rake install #安装默认主题</h1>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install #安装默认主题</span></code></pre></td></tr></table></div></figure>
+
 
 <p>也可以这里挑选第三方主题：
 <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes</a></p>
 
-<h3>setup_github_pages</h3>
+<h1>setup_github_pages</h1>
 
-<h1>输入以下命令进行github page关联,按要求输入即可</h1>
+<p>输入以下命令进行github page关联,按要求输入即可</p>
 
-<h1>rake setup_github_pages</h1>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
 
-<h3>发布文章</h3>
 
-<p>=====================</p>
+<h1>发布文章</h1>
 
-<h1>rake new_post[&ldquo;title&rdquo;]</h1>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title"]</span></code></pre></td></tr></table></div></figure>
+
 
 <p>创建好了一篇博文,按提示编辑source/_post/xxx.markdown这个文件输入博文内容,语法就是markdown,用过github应该都很熟悉了.</p>
 
-<h3>更新文章到github</h3>
+<h1>更新文章到github</h1>
 
-<h1>输入:</h1>
+<p>输入:</p>
 
-<p>rake generate</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake generate
+</span><span class='line'>rake deploy</span></code></pre></td></tr></table></div></figure>
 
-<h1>rake deploy</h1>
 
 <p>创建并上传文章到github,期间可能会需要输入github ssh key密码等内容,按提示输入即可.
 还有个rake preview命令可以预览,不过在cygwin下好像没用.就忽略掉吧,反正传上去之后也可以看到效果.</p>
